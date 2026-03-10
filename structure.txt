@@ -1,0 +1,580 @@
+  ExifToolVersion = 13.52
+  FileName = IMAG0080.MP4
+  Directory = E:/West camp 089/SQUADRON_B_CAM TRAP_DATA/Process Cams & Grids/Unprocess/[snip]
+  FileSize = 27711128
+  FileModifyDate = 1764336404
+  FileAccessDate = 1773048279.24452
+  FileCreateDate = 1770463238.56968
+  FilePermissions = 33206
+  FileType = MP4
+  FileTypeExtension = MP4
+  MIMEType = video/mp4
+  FileType (SubDirectory) -->
+  - Tag 'ftyp' (20 bytes):
+      0008: 6d 70 34 32 00 00 00 00 69 73 6f 6d 61 76 63 31 [mp42....isomavc1]
+      0018: 6d 70 34 32                                     [mp42]
+  + [BinaryData directory, 20 bytes, Big-endian]
+  | MajorBrand = mp42
+  | - Tag 0x0000 (4 bytes, undef[4]):
+  |     0008: 6d 70 34 32                                     [mp42]
+  | MinorVersion = 
+  | - Tag 0x0001 (4 bytes, undef[4]):
+  |     000c: 00 00 00 00                                     [....]
+  | CompatibleBrands = isomavc1mp42
+  | - Tag 0x0002 (12 bytes, undef[12]):
+  |     0010: 69 73 6f 6d 61 76 63 31 6d 70 34 32             [isomavc1mp42]
+  SkipInfo (SubDirectory) -->
+  - Tag 'skip' (65204 bytes):
+      0024: 00 00 00 0c 74 69 6d 61 00 00 00 1e 00 00 00 10 [....tima........]
+      0034: 76 65 72 20 31 39 30 31 31 33 31 30 00 00 fe 98 [ver 19011310....]
+      0044: 74 68 6d 61 ff d8 ff db 00 84 00 0d 09 0a 0b 0a [thma............]
+      0054: 08 0d 0b 0a 0b 0e 0e 0d 0f 13 20 15 13 12 12 13 [.......... .....]
+      0064: 27 1c 1e 17 20 2e 29 31 30 2e 29 2d 2c 33 3a 4a ['... .)10.)-,3:J]
+      [snip 65124 bytes]
+  + [SkipInfo directory]
+  | Unknown_tima = .
+  | - Tag 'tima' (4 bytes):
+  |     002c: 00 00 00 1e                                     [....]
+  | Version = 19011310
+  | - Tag 'ver ' (8 bytes):
+  |     0038: 31 39 30 31 31 33 31 30                         [19011310]
+  | ThumbnailImage = .................... .....'... .)10.)-,3:J>36F7,-@WAFLNRSR2>ZaZP`J[snip]
+  | - Tag 'thma' (65168 bytes):
+  |     0048: ff d8 ff db 00 84 00 0d 09 0a 0b 0a 08 0d 0b 0a [................]
+  |     0058: 0b 0e 0e 0d 0f 13 20 15 13 12 12 13 27 1c 1e 17 [...... .....'...]
+  |     0068: 20 2e 29 31 30 2e 29 2d 2c 33 3a 4a 3e 33 36 46 [ .)10.)-,3:J>36F]
+  |     0078: 37 2c 2d 40 57 41 46 4c 4e 52 53 52 32 3e 5a 61 [7,-@WAFLNRSR2>Za]
+  |     0088: 5a 50 60 4a 51 52 4f 01 0e 0e 0e 13 11 13 26 15 [ZP`JQRO.......&.]
+  |     [snip 65088 bytes]
+  MediaDataSize = 27611072
+  MediaDataOffset = 65248
+  MediaData = .0.......................................................................[snip]
+  - Tag 'mdat' (27611072 bytes):
+      fee0: 00 00 00 00 00 00 01 30 cc cc cc cc cc cc cc cc [.......0........]
+      fef0: cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc [................]
+      ff00: cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc [................]
+      ff10: cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc [................]
+      ff20: cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc cc [................]
+      [snip 27610992 bytes]
+  Movie (SubDirectory) -->
+  - Tag 'moov' (34800 bytes):
+   1a64ea8: 00 00 00 6c 6d 76 68 64 00 00 00 00 e5 4f 53 94 [...lmvhd.....OS.]
+   1a64eb8: e5 4f 53 94 00 01 68 f0 00 2a 52 24 00 01 00 00 [.OS...h..*R$....]
+   1a64ec8: 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 [................]
+   1a64ed8: 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 [................]
+   1a64ee8: 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 00 [............@...]
+      [snip 34720 bytes]
+  + [Movie directory]
+  | MovieHeader (SubDirectory) -->
+  | - Tag 'mvhd' (100 bytes):
+  |  1a64eb0: 00 00 00 00 e5 4f 53 94 e5 4f 53 94 00 01 68 f0 [.....OS..OS...h.]
+  |  1a64ec0: 00 2a 52 24 00 01 00 00 01 00 00 00 00 00 00 00 [.*R$............]
+  |  1a64ed0: 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 [................]
+  |  1a64ee0: 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 [................]
+  |  1a64ef0: 00 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00 [....@...........]
+  |     [snip 20 bytes]
+  | + [BinaryData directory, 100 bytes, Big-endian]
+  | | MovieHeaderVersion = 0
+  | | - Tag 0x0000 (1 bytes, int8u[1]):
+  | |  1a64eb0: 00                                              [.]
+  | | CreateDate = 3847181204
+  | | - Tag 0x0001 (4 bytes, int32u[1]):
+  | |  1a64eb4: e5 4f 53 94                                     [.OS.]
+  | | ModifyDate = 3847181204
+  | | - Tag 0x0002 (4 bytes, int32u[1]):
+  | |  1a64eb8: e5 4f 53 94                                     [.OS.]
+  | | TimeScale = 92400
+  | | - Tag 0x0003 (4 bytes, int32u[1]):
+  | |  1a64ebc: 00 01 68 f0                                     [..h.]
+  | | Duration = 2773540
+  | | - Tag 0x0004 (4 bytes, int32u[1]):
+  | |  1a64ec0: 00 2a 52 24                                     [.*R$]
+  | | PreferredRate = 65536
+  | | - Tag 0x0005 (4 bytes, int32u[1]):
+  | |  1a64ec4: 00 01 00 00                                     [....]
+  | | PreferredVolume = 256
+  | | - Tag 0x0006 (2 bytes, int16u[1]):
+  | |  1a64ec8: 01 00                                           [..]
+  | | MatrixStructure = 1 0 0 0 1 0 0 0 16384
+  | | - Tag 0x0009 (36 bytes, fixed32s[9]):
+  | |  1a64ed4: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | |  1a64ee4: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | |  1a64ef4: 40 00 00 00                                     [@...]
+  | | PreviewTime = 0
+  | | - Tag 0x0012 (4 bytes, int32u[1]):
+  | |  1a64ef8: 00 00 00 00                                     [....]
+  | | PreviewDuration = 0
+  | | - Tag 0x0013 (4 bytes, int32u[1]):
+  | |  1a64efc: 00 00 00 00                                     [....]
+  | | PosterTime = 0
+  | | - Tag 0x0014 (4 bytes, int32u[1]):
+  | |  1a64f00: 00 00 00 00                                     [....]
+  | | SelectionTime = 0
+  | | - Tag 0x0015 (4 bytes, int32u[1]):
+  | |  1a64f04: 00 00 00 00                                     [....]
+  | | SelectionDuration = 0
+  | | - Tag 0x0016 (4 bytes, int32u[1]):
+  | |  1a64f08: 00 00 00 00                                     [....]
+  | | CurrentTime = 0
+  | | - Tag 0x0017 (4 bytes, int32u[1]):
+  | |  1a64f0c: 00 00 00 00                                     [....]
+  | | NextTrackID = 3
+  | | - Tag 0x0018 (4 bytes, int32u[1]):
+  | |  1a64f10: 00 00 00 03                                     [....]
+  | Track (SubDirectory) -->
+  | - Tag 'trak' (22642 bytes):
+  |  1a64f1c: 00 00 00 5c 74 6b 68 64 00 00 00 0f e5 4f 53 94 [...\tkhd.....OS.]
+  |  1a64f2c: e5 4f 53 94 00 00 00 01 00 00 00 00 00 2a 52 24 [.OS..........*R$]
+  |  1a64f3c: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  |  1a64f4c: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  |  1a64f5c: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  |     [snip 22562 bytes]
+  | + [Track directory]
+  | | TrackHeader (SubDirectory) -->
+  | | - Tag 'tkhd' (84 bytes):
+  | |  1a64f24: 00 00 00 0f e5 4f 53 94 e5 4f 53 94 00 00 00 01 [.....OS..OS.....]
+  | |  1a64f34: 00 00 00 00 00 2a 52 24 00 00 00 00 00 00 00 00 [.....*R$........]
+  | |  1a64f44: 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 [................]
+  | |  1a64f54: 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 [................]
+  | |  1a64f64: 00 00 00 00 00 00 00 00 40 00 00 00 05 00 00 00 [........@.......]
+  | |  1a64f74: 02 d0 00 00                                     [....]
+  | | + [BinaryData directory, 84 bytes, Big-endian]
+  | | | TrackHeaderVersion = 0
+  | | | - Tag 0x0000 (1 bytes, int8u[1]):
+  | | |  1a64f24: 00                                              [.]
+  | | | TrackCreateDate = 3847181204
+  | | | - Tag 0x0001 (4 bytes, int32u[1]):
+  | | |  1a64f28: e5 4f 53 94                                     [.OS.]
+  | | | TrackModifyDate = 3847181204
+  | | | - Tag 0x0002 (4 bytes, int32u[1]):
+  | | |  1a64f2c: e5 4f 53 94                                     [.OS.]
+  | | | TrackID = 1
+  | | | - Tag 0x0003 (4 bytes, int32u[1]):
+  | | |  1a64f30: 00 00 00 01                                     [....]
+  | | | TrackDuration = 2773540
+  | | | - Tag 0x0005 (4 bytes, int32u[1]):
+  | | |  1a64f38: 00 2a 52 24                                     [.*R$]
+  | | | TrackLayer = 0
+  | | | - Tag 0x0008 (2 bytes, int16u[1]):
+  | | |  1a64f44: 00 00                                           [..]
+  | | | TrackVolume = 0
+  | | | - Tag 0x0009 (2 bytes, int16u[1]):
+  | | |  1a64f48: 00 00                                           [..]
+  | | | MatrixStructure = 1 0 0 0 1 0 0 0 16384
+  | | | - Tag 0x000a (36 bytes, fixed32s[9]):
+  | | |  1a64f4c: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | |  1a64f5c: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | |  1a64f6c: 40 00 00 00                                     [@...]
+  | | | ImageWidth = 83886080
+  | | | - Tag 0x0013 (4 bytes, int32u[1]):
+  | | |  1a64f70: 05 00 00 00                                     [....]
+  | | | ImageHeight = 47185920
+  | | | - Tag 0x0014 (4 bytes, int32u[1]):
+  | | |  1a64f74: 02 d0 00 00                                     [....]
+  | | Media (SubDirectory) -->
+  | | - Tag 'mdia' (22542 bytes):
+  | |  1a64f80: 00 00 00 20 6d 64 68 64 00 00 00 00 e5 4f 53 94 [... mdhd.....OS.]
+  | |  1a64f90: e5 4f 53 94 00 01 68 f0 00 2a 52 24 00 00 00 00 [.OS...h..*R$....]
+  | |  1a64fa0: 00 00 00 2d 68 64 6c 72 00 00 00 00 6d 68 6c 72 [...-hdlr....mhlr]
+  | |  1a64fb0: 76 69 64 65 00 00 00 00 00 00 00 00 00 00 00 00 [vide............]
+  | |  1a64fc0: 0c 56 69 64 65 6f 48 61 6e 64 6c 65 72 00 00 57 [.VideoHandler..W]
+  | |     [snip 22462 bytes]
+  | | + [Media directory]
+  | | | MediaHeader (SubDirectory) -->
+  | | | - Tag 'mdhd' (24 bytes):
+  | | |  1a64f88: 00 00 00 00 e5 4f 53 94 e5 4f 53 94 00 01 68 f0 [.....OS..OS...h.]
+  | | |  1a64f98: 00 2a 52 24 00 00 00 00                         [.*R$....]
+  | | | + [BinaryData directory, 24 bytes, Big-endian]
+  | | | | MediaHeaderVersion = 0
+  | | | | - Tag 0x0000 (4 bytes, int32u[1]):
+  | | | |  1a64f88: 00 00 00 00                                     [....]
+  | | | | MediaCreateDate = 3847181204
+  | | | | - Tag 0x0001 (4 bytes, int32u[1]):
+  | | | |  1a64f8c: e5 4f 53 94                                     [.OS.]
+  | | | | MediaModifyDate = 3847181204
+  | | | | - Tag 0x0002 (4 bytes, int32u[1]):
+  | | | |  1a64f90: e5 4f 53 94                                     [.OS.]
+  | | | | MediaTimeScale = 92400
+  | | | | - Tag 0x0003 (4 bytes, int32u[1]):
+  | | | |  1a64f94: 00 01 68 f0                                     [..h.]
+  | | | | MediaDuration = 2773540
+  | | | | - Tag 0x0004 (4 bytes, int32u[1]):
+  | | | |  1a64f98: 00 2a 52 24                                     [.*R$]
+  | | | | MediaLanguageCode = 0
+  | | | | - Tag 0x0005 (2 bytes, int16u[1]):
+  | | | |  1a64f9c: 00 00                                           [..]
+  | | | Handler (SubDirectory) -->
+  | | | - Tag 'hdlr' (37 bytes):
+  | | |  1a64fa8: 00 00 00 00 6d 68 6c 72 76 69 64 65 00 00 00 00 [....mhlrvide....]
+  | | |  1a64fb8: 00 00 00 00 00 00 00 00 0c 56 69 64 65 6f 48 61 [.........VideoHa]
+  | | |  1a64fc8: 6e 64 6c 65 72                                  [ndler]
+  | | | + [BinaryData directory, 37 bytes, Big-endian]
+  | | | | HandlerClass = mhlr
+  | | | | - Tag 0x0004 (4 bytes, undef[4]):
+  | | | |  1a64fac: 6d 68 6c 72                                     [mhlr]
+  | | | | HandlerType = vide
+  | | | | - Tag 0x0008 (4 bytes, undef[4]):
+  | | | |  1a64fb0: 76 69 64 65                                     [vide]
+  | | | | HandlerVendorID = 
+  | | | | - Tag 0x000c (4 bytes, undef[4]):
+  | | | |  1a64fb4: 00 00 00 00                                     [....]
+  | | | | HandlerDescription = .VideoHandler
+  | | | | - Tag 0x0018 (13 bytes, string[13]):
+  | | | |  1a64fc0: 0c 56 69 64 65 6f 48 61 6e 64 6c 65 72          [.VideoHandler]
+  | | | MediaInfo (SubDirectory) -->
+  | | | - Tag 'minf' (22457 bytes):
+  | | |  1a64fd5: 00 00 00 14 76 6d 68 64 00 00 00 01 00 00 00 00 [....vmhd........]
+  | | |  1a64fe5: 00 00 00 00 00 00 00 2c 68 64 6c 72 00 00 00 00 [.......,hdlr....]
+  | | |  1a64ff5: 64 68 6c 72 75 72 6c 20 00 00 00 00 00 00 00 00 [dhlrurl ........]
+  | | |  1a65005: 00 00 00 00 0b 44 61 74 61 48 61 6e 64 6c 65 72 [.....DataHandler]
+  | | |  1a65015: 00 00 00 24 64 69 6e 66 00 00 00 1c 64 72 65 66 [...$dinf....dref]
+  | | |     [snip 22377 bytes]
+  | | | + [MediaInfo directory]
+  | | | | VideoHeader (SubDirectory) -->
+  | | | | - Tag 'vmhd' (12 bytes):
+  | | | |  1a64fdd: 00 00 00 01 00 00 00 00 00 00 00 00             [............]
+  | | | | + [BinaryData directory, 12 bytes, Big-endian]
+  | | | | | GraphicsMode = 0
+  | | | | | - Tag 0x0002 (2 bytes, int16u[1]):
+  | | | | |  1a64fe1: 00 00                                           [..]
+  | | | | | OpColor = 0 0 0
+  | | | | | - Tag 0x0003 (6 bytes, int16u[3]):
+  | | | | |  1a64fe3: 00 00 00 00 00 00                               [......]
+  | | | | Handler (SubDirectory) -->
+  | | | | - Tag 'hdlr' (36 bytes):
+  | | | |  1a64ff1: 00 00 00 00 64 68 6c 72 75 72 6c 20 00 00 00 00 [....dhlrurl ....]
+  | | | |  1a65001: 00 00 00 00 00 00 00 00 0b 44 61 74 61 48 61 6e [.........DataHan]
+  | | | |  1a65011: 64 6c 65 72                                     [dler]
+  | | | | + [BinaryData directory, 36 bytes, Big-endian]
+  | | | | | HandlerClass = dhlr
+  | | | | | - Tag 0x0004 (4 bytes, undef[4]):
+  | | | | |  1a64ff5: 64 68 6c 72                                     [dhlr]
+  | | | | | HandlerType = url 
+  | | | | | - Tag 0x0008 (4 bytes, undef[4]):
+  | | | | |  1a64ff9: 75 72 6c 20                                     [url ]
+  | | | | | HandlerVendorID = 
+  | | | | | - Tag 0x000c (4 bytes, undef[4]):
+  | | | | |  1a64ffd: 00 00 00 00                                     [....]
+  | | | | | HandlerDescription = .DataHandler
+  | | | | | - Tag 0x0018 (12 bytes, string[12]):
+  | | | | |  1a65009: 0b 44 61 74 61 48 61 6e 64 6c 65 72             [.DataHandler]
+  | | | | DataInfo (SubDirectory) -->
+  | | | | - Tag 'dinf' (28 bytes):
+  | | | |  1a6501d: 00 00 00 1c 64 72 65 66 00 00 00 00 00 00 00 01 [....dref........]
+  | | | |  1a6502d: 00 00 00 0c 75 72 6c 20 00 00 00 01             [....url ....]
+  | | | | + [DataInfo directory]
+  | | | | | DataRef (SubDirectory) -->
+  | | | | | - Tag 'dref' (20 bytes):
+  | | | | |  1a65025: 00 00 00 00 00 00 00 01 00 00 00 0c 75 72 6c 20 [............url ]
+  | | | | |  1a65035: 00 00 00 01                                     [....]
+  | | | | | + [DataRef directory]
+  | | | | | | URL = .
+  | | | | | | - Tag 'url ' (4 bytes, undef):
+  | | | | | |  1a65035: 00 00 00 01                                     [....]
+  | | | | SampleTable (SubDirectory) -->
+  | | | | - Tag 'stbl' (22349 bytes):
+  | | | |  1a65041: 00 00 00 95 73 74 73 64 00 00 00 00 00 00 00 01 [....stsd........]
+  | | | |  1a65051: 00 00 00 85 61 76 63 31 00 00 00 00 00 00 00 01 [....avc1........]
+  | | | |  1a65061: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | | |  1a65071: 05 00 02 d0 00 48 00 00 00 48 00 00 00 00 00 00 [.....H...H......]
+  | | | |  1a65081: 00 01 04 68 32 36 34 00 00 00 00 00 00 00 00 00 [...h264.........]
+  | | | |     [snip 22269 bytes]
+  | | | | + [SampleTable directory]
+  | | | | | VisualSampleDesc (SubDirectory) -->
+  | | | | | - Tag 'stsd' (141 bytes):
+  | | | | |  1a65049: 00 00 00 00 00 00 00 01 00 00 00 85 61 76 63 31 [............avc1]
+  | | | | |  1a65059: 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 [................]
+  | | | | |  1a65069: 00 00 00 00 00 00 00 00 05 00 02 d0 00 48 00 00 [.............H..]
+  | | | | |  1a65079: 00 48 00 00 00 00 00 00 00 01 04 68 32 36 34 00 [.H.........h264.]
+  | | | | |  1a65089: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | | | |     [snip 61 bytes]
+  | | | | | + [BinaryData directory, 94 bytes, Big-endian]
+  | | | | | | CompressorID = avc1
+  | | | | | | - Tag 0x0002 (4 bytes, string[4]):
+  | | | | | |  1a65055: 61 76 63 31                                     [avc1]
+  | | | | | | VendorID = 
+  | | | | | | - Tag 0x000a (4 bytes, string[4]):
+  | | | | | |  1a65065: 00 00 00 00                                     [....]
+  | | | | | | SourceImageWidth = 1280
+  | | | | | | - Tag 0x0010 (2 bytes, int16u[1]):
+  | | | | | |  1a65071: 05 00                                           [..]
+  | | | | | | SourceImageHeight = 720
+  | | | | | | - Tag 0x0011 (2 bytes, int16u[1]):
+  | | | | | |  1a65073: 02 d0                                           [..]
+  | | | | | | XResolution = 72
+  | | | | | | - Tag 0x0012 (4 bytes, fixed32u[1]):
+  | | | | | |  1a65075: 00 48 00 00                                     [.H..]
+  | | | | | | YResolution = 72
+  | | | | | | - Tag 0x0014 (4 bytes, fixed32u[1]):
+  | | | | | |  1a65079: 00 48 00 00                                     [.H..]
+  | | | | | | CompressorName = .h264
+  | | | | | | - Tag 0x0019 (32 bytes, string[32]):
+  | | | | | |  1a65083: 04 68 32 36 34 00 00 00 00 00 00 00 00 00 00 00 [.h264...........]
+  | | | | | |  1a65093: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | | | | | BitDepth = 24
+  | | | | | | - Tag 0x0029 (2 bytes, int16u[1]):
+  | | | | | |  1a650a3: 00 18                                           [..]
+  | | | | | + [VisualSampleDesc directory]
+  | | | | | | AVCConfiguration = .d3...gd3..J.[..  (.@.. ..h.<.
+  | | | | | | - Tag 'avcC' (39 bytes):
+  | | | | | |  1a650af: 01 64 00 33 ff e1 00 18 67 64 00 33 ac 15 4a 05 [.d.3....gd.3..J.]
+  | | | | | |  1a650bf: 00 5b a6 e0 20 20 28 00 00 1f 40 00 0e a6 00 20 [.[..  (...@.... ]
+  | | | | | |  1a650cf: 01 00 04 68 ee 3c b0                            [...h.<.]
+  | | | | | VideoFrameRate = .....
+  | | | | | - Tag 'stts' (16 bytes, undef):
+  | | | | |  1a650de: 00 00 00 00 00 00 00 01 00 00 07 09 00 00 06 04 [................]
+  | | | | | SyncSampleTable = y....=L[jy..............-.<.K.Z.i.x......................[snip]
+  | | | | | - Tag 'stss' (492 bytes):
+  | | | | |  1a650f6: 00 00 00 00 00 00 00 79 00 00 00 01 00 00 00 10 [.......y........]
+  | | | | |  1a65106: 00 00 00 1f 00 00 00 2e 00 00 00 3d 00 00 00 4c [...........=...L]
+  | | | | |  1a65116: 00 00 00 5b 00 00 00 6a 00 00 00 79 00 00 00 88 [...[...j...y....]
+  | | | | |  1a65126: 00 00 00 97 00 00 00 a6 00 00 00 b5 00 00 00 c4 [................]
+  | | | | |  1a65136: 00 00 00 d3 00 00 00 e2 00 00 00 f1 00 00 01 00 [................]
+  | | | | |     [snip 412 bytes]
+  | | | | | SampleToChunk = ....
+  | | | | | - Tag 'stsc' (20 bytes):
+  | | | | |  1a652ea: 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 01 [................]
+  | | | | |  1a652fa: 00 00 00 01                                     [....]
+  | | | | | SampleSizes = .......GPf!,.(..$..../.">!,...O.1....L"W..,.u:.R.{%%.V3..%%._[snip]
+  | | | | | - Tag 'stsz' (7216 bytes):
+  | | | | |  1a65306: 00 00 00 00 00 00 00 00 00 00 07 09 00 03 85 f7 [................]
+  | | | | |  1a65316: 00 00 01 dd 00 00 47 50 00 00 66 21 00 00 2c 7f [......GP..f!..,.]
+  | | | | |  1a65326: 00 00 28 c2 00 00 0a 24 00 00 ca e8 00 00 0c b3 [..(....$........]
+  | | | | |  1a65336: 00 00 2f d8 00 00 22 3e 00 00 21 2c 00 00 18 e0 [../...">..!,....]
+  | | | | |  1a65346: 00 00 1e 4f 00 00 13 31 00 05 ca f3 00 00 17 4c [...O...1.......L]
+  | | | | |     [snip 7136 bytes]
+  | | | | | ChunkOffset64 = ........X....8L.d......4.e..rP.....h.......!D.5.......<..>l[snip]
+  | | | | | - Tag 'co64' (14416 bytes):
+  | | | | |  1a66f3e: 00 00 00 00 00 00 07 09 00 00 00 00 00 04 00 00 [................]
+  | | | | |  1a66f4e: 00 00 00 00 00 07 85 f8 00 00 00 00 00 07 89 58 [...............X]
+  | | | | |  1a66f5e: 00 00 00 00 00 07 d0 a8 00 00 00 00 00 08 38 4c [..............8L]
+  | | | | |  1a66f6e: 00 00 00 00 00 08 64 cc 00 00 00 00 00 08 8f 10 [......d.........]
+  | | | | |  1a66f7e: 00 00 00 00 00 08 99 34 00 00 00 00 00 09 65 9c [.......4......e.]
+  | | | | |     [snip 14336 bytes]
+  | Track (SubDirectory) -->
+  | - Tag 'trak' (11724 bytes):
+  |  1a6a796: 00 00 00 5c 74 6b 68 64 00 00 00 0f e5 4f 53 94 [...\tkhd.....OS.]
+  |  1a6a7a6: e5 4f 53 94 00 00 00 02 00 00 00 00 00 2a 51 e6 [.OS..........*Q.]
+  |  1a6a7b6: 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 [................]
+  |  1a6a7c6: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  |  1a6a7d6: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  |     [snip 11644 bytes]
+  | + [Track directory]
+  | | TrackHeader (SubDirectory) -->
+  | | - Tag 'tkhd' (84 bytes):
+  | |  1a6a79e: 00 00 00 0f e5 4f 53 94 e5 4f 53 94 00 00 00 02 [.....OS..OS.....]
+  | |  1a6a7ae: 00 00 00 00 00 2a 51 e6 00 00 00 00 00 00 00 00 [.....*Q.........]
+  | |  1a6a7be: 00 00 00 00 01 00 00 00 00 01 00 00 00 00 00 00 [................]
+  | |  1a6a7ce: 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 [................]
+  | |  1a6a7de: 00 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 [........@.......]
+  | |  1a6a7ee: 00 00 00 00                                     [....]
+  | | + [BinaryData directory, 84 bytes, Big-endian]
+  | | | TrackHeaderVersion = 0
+  | | | - Tag 0x0000 (1 bytes, int8u[1]):
+  | | |  1a6a79e: 00                                              [.]
+  | | | TrackCreateDate = 3847181204
+  | | | - Tag 0x0001 (4 bytes, int32u[1]):
+  | | |  1a6a7a2: e5 4f 53 94                                     [.OS.]
+  | | | TrackModifyDate = 3847181204
+  | | | - Tag 0x0002 (4 bytes, int32u[1]):
+  | | |  1a6a7a6: e5 4f 53 94                                     [.OS.]
+  | | | TrackID = 2
+  | | | - Tag 0x0003 (4 bytes, int32u[1]):
+  | | |  1a6a7aa: 00 00 00 02                                     [....]
+  | | | TrackDuration = 2773478
+  | | | - Tag 0x0005 (4 bytes, int32u[1]):
+  | | |  1a6a7b2: 00 2a 51 e6                                     [.*Q.]
+  | | | TrackLayer = 0
+  | | | - Tag 0x0008 (2 bytes, int16u[1]):
+  | | |  1a6a7be: 00 00                                           [..]
+  | | | TrackVolume = 256
+  | | | - Tag 0x0009 (2 bytes, int16u[1]):
+  | | |  1a6a7c2: 01 00                                           [..]
+  | | | MatrixStructure = 1 0 0 0 1 0 0 0 16384
+  | | | - Tag 0x000a (36 bytes, fixed32s[9]):
+  | | |  1a6a7c6: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | |  1a6a7d6: 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 [................]
+  | | |  1a6a7e6: 40 00 00 00                                     [@...]
+  | | | ImageWidth = 0
+  | | | - Tag 0x0013 (4 bytes, int32u[1]):
+  | | |  1a6a7ea: 00 00 00 00                                     [....]
+  | | | ImageHeight = 0
+  | | | - Tag 0x0014 (4 bytes, int32u[1]):
+  | | |  1a6a7ee: 00 00 00 00                                     [....]
+  | | Media (SubDirectory) -->
+  | | - Tag 'mdia' (11624 bytes):
+  | |  1a6a7fa: 00 00 00 20 6d 64 68 64 00 00 00 00 e5 4f 53 94 [... mdhd.....OS.]
+  | |  1a6a80a: e5 4f 53 94 00 00 7d 00 00 0e a7 ff 00 00 00 00 [.OS...}.........]
+  | |  1a6a81a: 00 00 00 2d 68 64 6c 72 00 00 00 00 6d 68 6c 72 [...-hdlr....mhlr]
+  | |  1a6a82a: 73 6f 75 6e 00 00 00 00 00 00 00 00 00 00 00 00 [soun............]
+  | |  1a6a83a: 0c 53 6f 75 6e 64 48 61 6e 64 6c 65 72 00 00 2d [.SoundHandler..-]
+  | |     [snip 11544 bytes]
+  | | + [Media directory]
+  | | | MediaHeader (SubDirectory) -->
+  | | | - Tag 'mdhd' (24 bytes):
+  | | |  1a6a802: 00 00 00 00 e5 4f 53 94 e5 4f 53 94 00 00 7d 00 [.....OS..OS...}.]
+  | | |  1a6a812: 00 0e a7 ff 00 00 00 00                         [........]
+  | | | + [BinaryData directory, 24 bytes, Big-endian]
+  | | | | MediaHeaderVersion = 0
+  | | | | - Tag 0x0000 (4 bytes, int32u[1]):
+  | | | |  1a6a802: 00 00 00 00                                     [....]
+  | | | | MediaCreateDate = 3847181204
+  | | | | - Tag 0x0001 (4 bytes, int32u[1]):
+  | | | |  1a6a806: e5 4f 53 94                                     [.OS.]
+  | | | | MediaModifyDate = 3847181204
+  | | | | - Tag 0x0002 (4 bytes, int32u[1]):
+  | | | |  1a6a80a: e5 4f 53 94                                     [.OS.]
+  | | | | MediaTimeScale = 32000
+  | | | | - Tag 0x0003 (4 bytes, int32u[1]):
+  | | | |  1a6a80e: 00 00 7d 00                                     [..}.]
+  | | | | MediaDuration = 960511
+  | | | | - Tag 0x0004 (4 bytes, int32u[1]):
+  | | | |  1a6a812: 00 0e a7 ff                                     [....]
+  | | | | MediaLanguageCode = 0
+  | | | | - Tag 0x0005 (2 bytes, int16u[1]):
+  | | | |  1a6a816: 00 00                                           [..]
+  | | | Handler (SubDirectory) -->
+  | | | - Tag 'hdlr' (37 bytes):
+  | | |  1a6a822: 00 00 00 00 6d 68 6c 72 73 6f 75 6e 00 00 00 00 [....mhlrsoun....]
+  | | |  1a6a832: 00 00 00 00 00 00 00 00 0c 53 6f 75 6e 64 48 61 [.........SoundHa]
+  | | |  1a6a842: 6e 64 6c 65 72                                  [ndler]
+  | | | + [BinaryData directory, 37 bytes, Big-endian]
+  | | | | HandlerClass = mhlr
+  | | | | - Tag 0x0004 (4 bytes, undef[4]):
+  | | | |  1a6a826: 6d 68 6c 72                                     [mhlr]
+  | | | | HandlerType = soun
+  | | | | - Tag 0x0008 (4 bytes, undef[4]):
+  | | | |  1a6a82a: 73 6f 75 6e                                     [soun]
+  | | | | HandlerVendorID = 
+  | | | | - Tag 0x000c (4 bytes, undef[4]):
+  | | | |  1a6a82e: 00 00 00 00                                     [....]
+  | | | | HandlerDescription = .SoundHandler
+  | | | | - Tag 0x0018 (13 bytes, string[13]):
+  | | | |  1a6a83a: 0c 53 6f 75 6e 64 48 61 6e 64 6c 65 72          [.SoundHandler]
+  | | | MediaInfo (SubDirectory) -->
+  | | | - Tag 'minf' (11539 bytes):
+  | | |  1a6a84f: 00 00 00 10 73 6d 68 64 00 00 00 00 00 00 00 00 [....smhd........]
+  | | |  1a6a85f: 00 00 00 2c 68 64 6c 72 00 00 00 00 64 68 6c 72 [...,hdlr....dhlr]
+  | | |  1a6a86f: 75 72 6c 20 00 00 00 00 00 00 00 00 00 00 00 00 [url ............]
+  | | |  1a6a87f: 0b 44 61 74 61 48 61 6e 64 6c 65 72 00 00 00 24 [.DataHandler...$]
+  | | |  1a6a88f: 64 69 6e 66 00 00 00 1c 64 72 65 66 00 00 00 00 [dinf....dref....]
+  | | |     [snip 11459 bytes]
+  | | | + [MediaInfo directory]
+  | | | | AudioHeader (SubDirectory) -->
+  | | | | - Tag 'smhd' (8 bytes):
+  | | | |  1a6a857: 00 00 00 00 00 00 00 00                         [........]
+  | | | | + [BinaryData directory, 8 bytes, Big-endian]
+  | | | | | Balance = 0
+  | | | | | - Tag 0x0002 (2 bytes, fixed16s[1]):
+  | | | | |  1a6a85b: 00 00                                           [..]
+  | | | | Handler (SubDirectory) -->
+  | | | | - Tag 'hdlr' (36 bytes):
+  | | | |  1a6a867: 00 00 00 00 64 68 6c 72 75 72 6c 20 00 00 00 00 [....dhlrurl ....]
+  | | | |  1a6a877: 00 00 00 00 00 00 00 00 0b 44 61 74 61 48 61 6e [.........DataHan]
+  | | | |  1a6a887: 64 6c 65 72                                     [dler]
+  | | | | + [BinaryData directory, 36 bytes, Big-endian]
+  | | | | | HandlerClass = dhlr
+  | | | | | - Tag 0x0004 (4 bytes, undef[4]):
+  | | | | |  1a6a86b: 64 68 6c 72                                     [dhlr]
+  | | | | | HandlerType = url 
+  | | | | | - Tag 0x0008 (4 bytes, undef[4]):
+  | | | | |  1a6a86f: 75 72 6c 20                                     [url ]
+  | | | | | HandlerVendorID = 
+  | | | | | - Tag 0x000c (4 bytes, undef[4]):
+  | | | | |  1a6a873: 00 00 00 00                                     [....]
+  | | | | | HandlerDescription = .DataHandler
+  | | | | | - Tag 0x0018 (12 bytes, string[12]):
+  | | | | |  1a6a87f: 0b 44 61 74 61 48 61 6e 64 6c 65 72             [.DataHandler]
+  | | | | DataInfo (SubDirectory) -->
+  | | | | - Tag 'dinf' (28 bytes):
+  | | | |  1a6a893: 00 00 00 1c 64 72 65 66 00 00 00 00 00 00 00 01 [....dref........]
+  | | | |  1a6a8a3: 00 00 00 0c 75 72 6c 20 00 00 00 01             [....url ....]
+  | | | | + [DataInfo directory]
+  | | | | | DataRef (SubDirectory) -->
+  | | | | | - Tag 'dref' (20 bytes):
+  | | | | |  1a6a89b: 00 00 00 00 00 00 00 01 00 00 00 0c 75 72 6c 20 [............url ]
+  | | | | |  1a6a8ab: 00 00 00 01                                     [....]
+  | | | | | + [DataRef directory]
+  | | | | | | URL = .
+  | | | | | | - Tag 'url ' (4 bytes, undef):
+  | | | | | |  1a6a8ab: 00 00 00 01                                     [....]
+  | | | | SampleTable (SubDirectory) -->
+  | | | | - Tag 'stbl' (11435 bytes):
+  | | | |  1a6a8b7: 00 00 00 5b 73 74 73 64 00 00 00 00 00 00 00 01 [...[stsd........]
+  | | | |  1a6a8c7: 00 00 00 4b 6d 70 34 61 00 00 00 00 00 00 00 01 [...Kmp4a........]
+  | | | |  1a6a8d7: 00 00 00 00 00 00 00 00 00 01 00 10 ff fe 00 00 [................]
+  | | | |  1a6a8e7: 7d 00 00 00 00 00 00 27 65 73 64 73 00 00 00 00 [}......'esds....]
+  | | | |  1a6a8f7: 03 19 00 00 00 04 11 40 15 10 00 00 00 00 00 00 [.......@........]
+  | | | |     [snip 11355 bytes]
+  | | | | + [SampleTable directory]
+  | | | | | AudioSampleDesc (SubDirectory) -->
+  | | | | | - Tag 'stsd' (83 bytes):
+  | | | | |  1a6a8bf: 00 00 00 00 00 00 00 01 00 00 00 4b 6d 70 34 61 [...........Kmp4a]
+  | | | | |  1a6a8cf: 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 [................]
+  | | | | |  1a6a8df: 00 01 00 10 ff fe 00 00 7d 00 00 00 00 00 00 27 [........}......']
+  | | | | |  1a6a8ef: 65 73 64 73 00 00 00 00 03 19 00 00 00 04 11 40 [esds...........@]
+  | | | | |  1a6a8ff: 15 10 00 00 00 00 00 00 00 00 00 00 05 02 12 88 [................]
+  | | | | |  1a6a90f: 06 01 02                                        [...]
+  | | | | | + [BinaryData directory, 44 bytes, Big-endian]
+  | | | | | | AudioFormat = mp4a
+  | | | | | | - Tag 0x0004 (4 bytes, undef[4]):
+  | | | | | |  1a6a8cb: 6d 70 34 61                                     [mp4a]
+  | | | | | | AudioVendorID = 
+  | | | | | | - Tag 0x0014 (4 bytes, undef[4]):
+  | | | | | |  1a6a8db: 00 00 00 00                                     [....]
+  | | | | | | AudioChannels = 1
+  | | | | | | - Tag 0x0018 (2 bytes, int16u[1]):
+  | | | | | |  1a6a8df: 00 01                                           [..]
+  | | | | | | AudioBitsPerSample = 16
+  | | | | | | - Tag 0x001a (2 bytes, int16u[1]):
+  | | | | | |  1a6a8e1: 00 10                                           [..]
+  | | | | | | AudioSampleRate = 32000
+  | | | | | | - Tag 0x0020 (4 bytes, fixed32u[1]):
+  | | | | | |  1a6a8e7: 7d 00 00 00                                     [}...]
+  | | | | | + [AudioSampleDesc directory]
+  | | | | | | Unknown_esds = ....@.........
+  | | | | | | - Tag 'esds' (31 bytes):
+  | | | | | |  1a6a8f3: 00 00 00 00 03 19 00 00 00 04 11 40 15 10 00 00 [...........@....]
+  | | | | | |  1a6a903: 00 00 00 00 00 00 00 00 05 02 12 88 06 01 02    [...............]
+  | | | | | TimeToSampleTable = ....
+  | | | | | - Tag 'stts' (16 bytes, undef):
+  | | | | |  1a6a91a: 00 00 00 00 00 00 00 01 00 00 03 aa 00 00 04 00 [................]
+  | | | | | SampleToChunk = ....
+  | | | | | - Tag 'stsc' (20 bytes):
+  | | | | |  1a6a932: 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 01 [................]
+  | | | | |  1a6a942: 00 00 00 01                                     [....]
+  | | | | | SampleSizes = .............................................................[snip]
+  | | | | | - Tag 'stsz' (3764 bytes):
+  | | | | |  1a6a94e: 00 00 00 00 00 00 00 00 00 00 03 aa 00 00 01 80 [................]
+  | | | | |  1a6a95e: 00 00 01 80 00 00 01 80 00 00 01 80 00 00 01 80 [................]
+  | | | | |  1a6a96e: 00 00 01 80 00 00 01 80 00 00 01 80 00 00 01 80 [................]
+  | | | | |  1a6a97e: 00 00 01 80 00 00 01 80 00 00 01 80 00 00 01 80 [................]
+  | | | | |  1a6a98e: 00 00 01 80 00 00 01 80 00 00 01 80 00 00 01 80 [................]
+  | | | | |     [snip 3684 bytes]
+  | | | | | ChunkOffset64 = ......6.....d...(.....t.4x..8.<..>..L$.M..T.Y(.............[snip]
+  | | | | | - Tag 'co64' (7512 bytes):
+  | | | | |  1a6b80a: 00 00 00 00 00 00 03 aa 00 00 00 00 00 07 87 d8 [................]
+  | | | | |  1a6b81a: 00 00 00 00 00 08 36 cc 00 00 00 00 00 08 8d 90 [......6.........]
+  | | | | |  1a6b82a: 00 00 00 00 00 09 64 1c 00 00 00 00 00 09 a2 28 [......d........(]
+  | | | | |  1a6b83a: 00 00 00 00 00 09 c5 e8 00 00 00 00 00 0a 01 74 [...............t]
+  | | | | |  1a6b84a: 00 00 00 00 00 0a 34 78 00 00 00 00 00 10 18 38 [......4x.......8]
+  | | | | |     [snip 7432 bytes]
+  | UserData (SubDirectory) -->
+  | - Tag 'udta' (46 bytes):
+  |  1a6d56a: 00 00 00 2e 75 73 65 72 00 00 00 14 a9 66 6d 74 [....user.....fmt]
+  |  1a6d57a: 00 08 00 00 4e 4f 56 41 54 45 4b 00 00 00 00 12 [....NOVATEK.....]
+  |  1a6d58a: a9 69 6e 66 00 06 00 00 44 45 4d 4f 31 00       [.inf....DEMO1.]
+  | + [UserData directory]
+  | | Unknown_user = ..fmt.NOVATEK..inf.DEMO1
+  | | - Tag 'user' (38 bytes):
+  | |  1a6d572: 00 00 00 14 a9 66 6d 74 00 08 00 00 4e 4f 56 41 [.....fmt....NOVA]
+  | |  1a6d582: 54 45 4b 00 00 00 00 12 a9 69 6e 66 00 06 00 00 [TEK......inf....]
+  | |  1a6d592: 44 45 4d 4f 31 00                               [DEMO1.]
+  | GPSDataList = ....j\@&.t@0:t@<5.@If8@V..@d..@r..@.S.@...@..P@...@..L@.t@@...@.N.@..[snip]
+  | - Tag 'gps ' (248 bytes):
+  |  1a6d5a0: 00 00 01 01 00 00 00 1e 00 1c 6a 5c 00 00 40 00 [..........j\..@.]
+  |  1a6d5b0: 00 26 9a 74 00 00 40 00 00 30 3a 74 00 00 40 00 [.&.t..@..0:t..@.]
+  |  1a6d5c0: 00 3c 35 b0 00 00 40 00 00 49 66 38 00 00 40 00 [.<5...@..If8..@.]
+  |  1a6d5d0: 00 56 f3 08 00 00 40 00 00 64 e7 f0 00 00 40 00 [.V....@..d....@.]
+  |  1a6d5e0: 00 72 a6 e0 00 00 40 00 00 80 53 18 00 00 40 00 [.r....@...S...@.]
+  |     [snip 168 bytes]
