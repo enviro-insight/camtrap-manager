@@ -111,7 +111,7 @@ def main():
 
     args = parse_args()
 
-    if not args.input:
+    if 'input' not in args or not args.input:
 
         Tk.withdraw()
         directory = askdirectory(title="Select folder containing video files")
