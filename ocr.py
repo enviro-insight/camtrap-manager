@@ -53,8 +53,8 @@ for video in videos:
             ocrs.add(camera_id)
         else:
             print(f"Error: Could not extract camera ID from video {video}") 
-            # save the roi for debugging
-            cv2.imwrite(f"{video.stem}_roi.png", roi)       
+            # save the roi next to the video for debugging
+            cv2.imwrite(f"{video}_roi.png", roi)       
 
     else:
         print("Oops, we couldn't process the image!")
