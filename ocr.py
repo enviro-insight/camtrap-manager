@@ -15,6 +15,9 @@ folder_path = askdirectory(title="Select folder containing video files")
 
 print("Reading camera ID from first video")
 first_video = next(Path(folder_path).glob("*.mp4"), None)
+if not first_video:
+    print("Error: No video files found in the selected directory.")
+    exit(1)
 
 cap = cv2.VideoCapture(str(first_video))
 cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
