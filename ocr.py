@@ -6,6 +6,7 @@ import cv2
 import pytesseract
 from pathlib import Path
 from time import time
+import numpy as np
 
 if not shutil.which("tesseract"):
     print("Tesseract is not installed or not on PATH")
@@ -42,10 +43,18 @@ for video in videos:
 
     if ret:
 
-        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-        gray = cv2.threshold(gray, 250, 255, cv2.THRESH_BINARY)[1]
+        hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        text = pytesseract.image_to_string(gray)
+        # define "white"
+        lower = np.array([0, 0, 200])     # low saturation, high brightness
+        upper = np.array([180, 40, 255])
+
+        mask = cv2.inRange(hsv, lower, upper)
+        kernel = np.ones((3,3), np.uint8)
+        mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+
+        text = pytesseract.image_to_string(mask ,
+            config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" )
         text = text.replace("CO", "C0")  # remove spaces
         match = re.search(r"C\d{3}", text)
         if match:
