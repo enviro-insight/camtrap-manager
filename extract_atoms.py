@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# trying to get the required metadata from the udta atoms in the video files, but so far, unsuccessfully
+
 import os
 import re
 import shutil

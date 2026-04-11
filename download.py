@@ -10,7 +10,7 @@ from googleapiclient.http import MediaIoBaseDownload
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 
-DOWNLOAD_DIR = Path("20260308") # use the download date as these files are updated regularly
+DOWNLOAD_DIR = Path("20260319") # use the download date as these files are updated regularly
 
 # Regex pattern for filenames
 # Example: r"camera.*_"
@@ -123,7 +123,6 @@ def main():
         print("Google Sheets were found in root, but none matched the name filter.")
     else:
         print(f"Finished. Files saved to: {DOWNLOAD_DIR.resolve()}")
-
 
 if __name__ == "__main__":
     main()

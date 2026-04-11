@@ -1,0 +1,1 @@
+# TODO check that every camera check has a corresponding deployment in the merged dataset

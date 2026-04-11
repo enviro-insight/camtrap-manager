@@ -6,10 +6,9 @@ import csv
 import os
 from datetime import datetime
 
-DIR = "20260308"
+DIR = "20260319"
 
 fields = {
-	"__id": "deploymentID",
     "dataset": "dataset", # abbreviated form from the original file
 	"Site ID?": "locationID",
 	"Camera or song meter ID?": "deviceID",
@@ -45,31 +44,43 @@ for filename in os.listdir(DIR):
                 row['dataset'] = "phone_" + dataset_name
 
                 # if the field is Location, split to lat and long
+                row["Latitude"] = ""
+                row["Longitude"] = ""
                 if "Location" in row:
                     location = row["Location"]
                     if location:
                         try:
-                            lat, long = location.split(",")
+                            parts = location.split(", ") # sometimes there is more than one location...
+                            latlong = parts[-1] if len(parts) > 1 else location
+                            lat, long = latlong.split(",")
                             row["Latitude"] = lat.strip()
                             row["Longitude"] = long.strip()
                         except ValueError:
                             print(f"Warning: Could not split Location '{location}' in file {filename}")
-                    else:
-                        row["Latitude"] = ""
-                        row["Longitude"] = ""
-
+              
                 if "Date" in row:
                     date_str = row["Date"]
-                    try:
-                        date_obj = datetime.strptime(date_str, "%m/%d/%Y")
+                    date_obj = None
+
+                    for fmt in ("%m/%d/%Y", "%m/%d/%y"):
+                        try:
+                            date_obj = datetime.strptime(date_str, fmt)
+                            break
+                        except ValueError:
+                            continue
+                    if not date_obj:
+                        print(f"Warning: Could not parse Date '{date_str}' in file {filename}") 
+                    else:
                         row["Date"] = date_obj.strftime("%Y-%m-%d")
-                    except ValueError:
-                        print(f"Warning: Could not parse Date '{date_str}' in file {filename}")
 
                 if "Time" in row:
                     time_str = row["Time"]
+                    if len(time_str) > 8:
+                        fmt="%I:%M:%S %p"
+                    else:
+                        fmt="%H:%M:%S"
                     try:
-                        time_obj = datetime.strptime(time_str, "%I:%M:%S %p")
+                        time_obj = datetime.strptime(time_str, fmt)
                         row["Time"] = time_obj.strftime("%H:%M")
                     except ValueError:
                         print(f"Warning: Could not parse Time '{time_str}' in file {filename}")
@@ -88,12 +99,18 @@ for filename in os.listdir(DIR):
                 if "Notes / Comments" in row:
                     row["Notes / Comments"] = row["Notes / Comments"].replace("\n", " ").replace("\r", " ")
 
-                deployment = {fields[key]: row[key].strip() for key in fields}
-                deployments.append(deployment)
+                try:
+                    deployment = {fields[key]: row[key].strip() for key in fields}
+                    deployments.append(deployment)
+                except KeyError as e:
+                    print(f"Warning: Missing expected field {e} in file {filename}. Skipping row.")
+                    continue
 
 # write to output.csv
+# get the last part of DIR, should be the date
+d = DIR.rsplit("/", 1)[-1]
 print("Writing merged data...")
-outfile = os.path.join(DIR, "deployments.csv")
+outfile = os.path.join(DIR, "deployments_" + d + ".csv")
 with open(outfile, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=fields.values())
     writer.writeheader()
@@ -101,5 +118,5 @@ with open(outfile, "w", newline="", encoding="utf-8") as f:
         writer.writerow(deployment)
 
 print("Done!")
-print(f"{len(deployments)} deployments written to output.csv. Skipped {test_counter} test rows.")
+print(f"{len(deployments)} deployments written to {outfile}. Skipped {test_counter} test rows.")
 
