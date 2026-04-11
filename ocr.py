@@ -18,6 +18,8 @@ first_video = next(Path(folder_path).glob("*.mp4"), None)
 if not first_video:
     print("Error: No video files found in the selected directory.")
     exit(1)
+else:
+    print("First video file found:", first_video)
 
 cap = cv2.VideoCapture(str(first_video))
 cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
