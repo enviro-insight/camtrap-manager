@@ -31,14 +31,16 @@ cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
 ret, frame = cap.read()
 cap.release()
 
-# save as an image
-image_path = Path(folder_path) / "frame.png"
-cv2.imwrite(str(image_path), frame)
-print("Saved frame as image:", image_path)
+# crop to metadata
+h, w = frame.shape[:2]
 
+# Example: bottom-right corner (tweak these numbers)
+roi = frame[int(h*0.85):h, int(w*0.6):w]
+cv2.imshow("ROI", roi)
+cv2.waitKey(0)
 
 if ret:
-    text = pytesseract.image_to_string(frame)
+    text = pytesseract.image_to_string(roi)
     print("OCRd text:", text)
     # extract the string that matches format C###
     match = re.search(r"C\d{3}", text)
