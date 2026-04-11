@@ -5,6 +5,7 @@ import shutil
 import cv2
 import pytesseract
 from pathlib import Path
+from time import time
 
 if not shutil.which("tesseract"):
     print("Tesseract is not installed or not on PATH")
@@ -35,18 +36,31 @@ cap.release()
 h, w = frame.shape[:2]
 
 # Example: bottom-right corner (tweak these numbers)
-roi = frame[int(h*0.8):h, int(w*0.4):w]
+roi = frame[int(h*0.9):h, int(w*0.4):w]
 cv2.imshow("ROI", roi)
 cv2.waitKey(0)
 
 if ret:
-    text = pytesseract.image_to_string(roi)
-    print("OCRd text:", text)
-    # extract the string that matches format C###
-    text = text.replace("CO", "C0")  # remove spaces
-    match = re.search(r"C\d{3}", text)
-    if match:
-        camera_id = match.group(0)
-        print("Extracted camera ID:", camera_id)
-    else:
-        print("Error: Could not extract camera ID from video. Please specify with -c or ensure the camera ID is visible in the video frames.")
+    ocrs = set()
+    start_time = time()
+    for i in range(1, 100):
+    
+        text = pytesseract.image_to_string(roi)
+        text = text.replace("CO", "C0")  # remove spaces
+        match = re.search(r"C\d{3}", text)
+        if match:
+            camera_id = match.group(0)
+            ocrs.add(camera_id)
+        else:
+            print("Error: Could not extract camera ID from video on iteration", i)
+
+    end_time = time()
+    # print pretty time H:M:S
+    elapsed_time = end_time - start_time
+    hours, rem = divmod(elapsed_time, 3600)
+    minutes, seconds = divmod(rem, 60)
+    print("Time: {:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
+    print("OCR values: ", "|".join(list(ocrs)))
+
+else:
+    print("Oops, we couldn't process the image!")
