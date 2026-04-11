@@ -1,9 +1,14 @@
 # just testing out the ocr stuff
 
 import re
+import shutil
 import cv2
 import pytesseract
 from pathlib import Path
+
+if not shutil.which("tesseract"):
+    print("Tesseract is not installed or not on PATH")
+    exit(1)
 
 from tkinter import Tk
 from tkinter.filedialog import askdirectory
@@ -25,6 +30,12 @@ cap = cv2.VideoCapture(str(first_video))
 cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
 ret, frame = cap.read()
 cap.release()
+
+# save as an image
+image_path = Path(folder_path) / "frame.png"
+cv2.imwrite(str(image_path), frame)
+print("Saved frame as image:", image_path)
+
 
 if ret:
     text = pytesseract.image_to_string(frame)
