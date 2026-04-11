@@ -132,7 +132,7 @@ def main():
         sys.exit(1)
     camera_id = args.camera_id
 
-    if not args.deployments_file:
+    if 'deployments_file' not in args or not args.deployments_file:
         Tk().withdraw()
         deployments_file = askopenfilename(title="Select deployments file", filetypes=[("CSV files", "*.csv")])
 
