@@ -42,7 +42,10 @@ for video in videos:
 
     if ret:
 
-        text = pytesseract.image_to_string(roi)
+        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+        gray = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)[1]
+
+        text = pytesseract.image_to_string(gray)
         text = text.replace("CO", "C0")  # remove spaces
         match = re.search(r"C\d{3}", text)
         if match:
