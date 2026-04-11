@@ -123,7 +123,7 @@ def main():
     else:
         directory = Path(args.input)
 
-    if not os.path.isdir(args.input):
+    if not os.path.isdir(directory):
         print(f"Error: Input directory does not exist: {args.input}")
         sys.exit(1)
 
