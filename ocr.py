@@ -63,7 +63,7 @@ for video in videos:
         else:
             print(f"Error: Could not extract camera ID from video {video}") 
             # save the roi next to the video for debugging
-            cv2.imwrite(f"{video}_roi.png", roi)       
+            cv2.imwrite(f"{video}_roi.png", mask)       
 
     else:
         print("Oops, we couldn't process the image!")
