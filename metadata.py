@@ -112,10 +112,6 @@ def main():
     args = parse_args()
 
     if not args.input:
-        print("Error: Input directory is required (-h for help).")
-        sys.exit(1)
-
-    if not os.path.isdir(args.input):
 
         Tk.withdraw()
         directory = askdirectory(title="Select folder containing video files")
@@ -126,6 +122,10 @@ def main():
             directory = Path(directory)
     else:
         directory = Path(args.input)
+
+    if not os.path.isdir(args.input):
+        print(f"Error: Input directory does not exist: {args.input}")
+        sys.exit(1)
 
     if not args.camera_id:
         print("Camera ID is required, use -c with camera ID i.e. python metadata.py -c C027")
