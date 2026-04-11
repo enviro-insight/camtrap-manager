@@ -35,7 +35,7 @@ cap.release()
 h, w = frame.shape[:2]
 
 # Example: bottom-right corner (tweak these numbers)
-roi = frame[int(h*0.85):h, int(w*0.6):w]
+roi = frame[int(h*0.85):h, int(w*0.8):w]
 cv2.imshow("ROI", roi)
 cv2.waitKey(0)
 
