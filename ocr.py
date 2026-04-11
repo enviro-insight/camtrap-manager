@@ -43,6 +43,7 @@ if ret:
     text = pytesseract.image_to_string(roi)
     print("OCRd text:", text)
     # extract the string that matches format C###
+    text = text.replace("CO", "C0")  # remove spaces
     match = re.search(r"C\d{3}", text)
     if match:
         camera_id = match.group(0)
