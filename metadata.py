@@ -10,9 +10,9 @@ import shutil
 import subprocess
 import sys
 import csv
+from tkinter import Tk
+from tkinter.filedialog import askdirectory, askopenfilename
 from pathlib import Path
-import cv2
-import pytesseract
 
 DIRNAME_FORMAT = 'SC' # CS for camera - site or SC for site - camera
 
@@ -92,21 +92,9 @@ def parse_args():
     )
 
     parser.add_argument(
-        "-i",
-        "--input",
-        help="Directory containing MP4 videos (required)"
-    )
-
-    parser.add_argument(
         "-c",
         "--camera-id",
         help="The ID number of the camera, e.g. C027"
-    )
-
-    parser.add_argument(
-        "-d",
-        "--deployments-file",
-        help="CSV file with camera locations, dates, etc. (optional)"
     )
 
     parser.add_argument(
@@ -128,19 +116,34 @@ def main():
         sys.exit(1)
 
     if not os.path.isdir(args.input):
-        print(f"Error: Directory not found: {args.input}")
+
+        Tk.withdraw()
+        directory = askdirectory(title="Select folder containing video files")
+        if not directory:
+            print("Error: No directory selected.")
+            sys.exit(1)
+        else:
+            directory = Path(directory)
+    else:
+        directory = Path(args.input)
+
+    if not args.camera_id:
+        print("Camera ID is required, use -c with camera ID i.e. python metadata.py -c C027")
         sys.exit(1)
+    camera_id = args.camera_id
 
     if not args.deployments_file:
-        print("No deployments file provided. Camera and site fields will be left blank in the output dataset.")
+        Tk.withdraw()
+        deployments_file = askopenfilename(title="Select deployments file", filetypes=[("CSV files", "*.csv")])
 
-    if args.deployments_file and not os.path.isfile(args.deployments_file):
-        print(f"Error: Deployments file does not exist: {args.deployments_file}")
-        sys.exit(1)
+        if not deployments_file:
+            print("No deployments file selected. Camera and site fields will be left blank in the output dataset.")
+        else:
+            deployments_file = Path(deployments_file)
+            if not deployments_file.is_file():
+                print(f"Error: Deployments file does not exist: {deployments_file}")
+                sys.exit(1)
 
-    directory = Path(args.input)
-    camera_id = args.camera_id if args.camera_id else None
-    deployments_file = Path(args.deployments_file) if args.deployments_file else None
     output_file = Path(args.output_file)
 
     # make sure output file is a csv
@@ -156,31 +159,6 @@ def main():
         except PermissionError:
             print(f"Error: Output file is open in another program: {output_file}. Please close it and try again, or specify a different output file name with -o.")
             sys.exit(1)
-
-    if not camera_id:
-        print("Reading camera ID from first video")
-        first_video = next(directory.glob("*.mp4"), None)
-        if not first_video:
-            print(f"Error: No video files found in directory: {directory}")
-            sys.exit(1)
-            
-        cap = cv2.VideoCapture(str(first_video))
-        cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
-        ret, frame = cap.read()
-        cap.release()
-
-        if ret:
-            text = pytesseract.image_to_string(frame)
-            print(text)
-            # extract the string that matches format C###
-            match = re.search(r"C\d{3}", text)
-            if match:
-                camera_id = match.group(0)
-            else:
-                print("Error: Could not extract camera ID from video. Please specify with -c or ensure the camera ID is visible in the video frames.")
-                sys.exit(1)
-            
-
 
     print("Reading metadata from video files in directory:", directory, "for camera ID:", camera_id)
 
