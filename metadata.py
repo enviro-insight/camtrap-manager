@@ -113,7 +113,7 @@ def main():
 
     if 'input' not in args or not args.input:
 
-        Tk.withdraw()
+        Tk().withdraw()
         directory = askdirectory(title="Select folder containing video files")
         if not directory:
             print("Error: No directory selected.")
@@ -133,7 +133,7 @@ def main():
     camera_id = args.camera_id
 
     if not args.deployments_file:
-        Tk.withdraw()
+        Tk().withdraw()
         deployments_file = askopenfilename(title="Select deployments file", filetypes=[("CSV files", "*.csv")])
 
         if not deployments_file:
