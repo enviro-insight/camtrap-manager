@@ -49,7 +49,7 @@ for video in videos:
             camera_id = match.group(0)
             ocrs.add(camera_id)
         else:
-            print("Error: Could not extract camera ID from video on iteration", i)        
+            print(f"Error: Could not extract camera ID from video {video}")        
 
     else:
         print("Oops, we couldn't process the image!")
