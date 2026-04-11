@@ -49,7 +49,9 @@ for video in videos:
             camera_id = match.group(0)
             ocrs.add(camera_id)
         else:
-            print(f"Error: Could not extract camera ID from video {video}")        
+            print(f"Error: Could not extract camera ID from video {video}") 
+            # save the roi for debugging
+            cv2.imwrite(f"{video.stem}_roi.png", roi)       
 
     else:
         print("Oops, we couldn't process the image!")
