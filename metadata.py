@@ -13,6 +13,7 @@ import csv
 from tkinter import Tk
 from tkinter.filedialog import askdirectory, askopenfilename
 from pathlib import Path
+from datetime import date
 
 DIRNAME_FORMAT = 'SC' # CS for camera - site or SC for site - camera
 
@@ -97,13 +98,6 @@ def parse_args():
         help="The ID number of the camera, e.g. C027"
     )
 
-    parser.add_argument(
-        "-o",
-        "--output-file",
-        default="metadata.csv",
-        help="Output CSV file (default: metadata.csv); will be added to same directory as the input videos (optional)"
-    )
-
     return parser.parse_args()
 
 # python metadata.py <directory> <cameras file>
@@ -144,22 +138,6 @@ def main():
                 print(f"Error: Deployments file does not exist: {deployments_file}")
                 sys.exit(1)
 
-    output_file = Path(args.output_file)
-
-    # make sure output file is a csv
-    if output_file.suffix.lower() != ".csv":
-        print("Error: Output file must have a .csv extension.")
-        sys.exit(1)
-
-    # make sure the output file is not already open somewhere
-    if output_file.exists():
-        try:
-            with open(output_file, "a"):
-                pass
-        except PermissionError:
-            print(f"Error: Output file is open in another program: {output_file}. Please close it and try again, or specify a different output file name with -o.")
-            sys.exit(1)
-
     print("Reading metadata from video files in directory:", directory, "for camera ID:", camera_id)
 
     print("Ensuring ExifTool is available...")
@@ -194,7 +172,7 @@ def main():
         
 
     # get all the video files in the specified directory
-    video_files = list(directory.glob("*.mp4"))
+    video_files = list(directory.glob("*.mp4", case_sensitive=False))
 
     # extract metadata for each file and print it
     results = []
@@ -247,7 +225,9 @@ def main():
 
     # write to csv
     # same directory as the script, named metadata.csv
-    outfile = directory / output_file
+    # get the last date in the dataset for the filename else today's date
+    last_date = results[-1]["date"] if results else date.today().isoformat()
+    outfile = directory / f"metadata_{camera_id}_{last_date}.csv"
 
     with open(outfile, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["file_name", "camera", "site", "date", "time", "duration", "latitude", "longitude", "species", "identifiedBy", "identifiedDate", "notes"])
