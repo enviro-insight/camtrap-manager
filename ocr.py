@@ -37,7 +37,7 @@ for video in videos:
     h, w = frame.shape[:2]
 
     # Example: bottom-right corner (tweak these numbers)
-    roi = frame[int(h*dims["spartan"]["height"]):h, int(w*dims["spartan"]["widthStart"]):int(w*dims["spartan"]["widthEnd"])]
+    roi = frame[int(h*dims["spartan"]["heightStart"]):int(h*dims["spartan"]["heightEnd"]), int(w*dims["spartan"]["widthStart"]):int(w*dims["spartan"]["widthEnd"])]
     cv2.imshow("ROI", roi)
     cv2.waitKey(0)
     exit(0)
