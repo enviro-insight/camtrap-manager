@@ -47,34 +47,23 @@ for video in videos:
 
     if ret:
 
-        # hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
-
-        # # define "white"
-        # lower = np.array([0, 0, 200])     # low saturation, high brightness
-        # upper = np.array([180, 40, 255])
-
-        # mask = cv2.inRange(hsv, lower, upper)
-        # kernel = np.ones((3,3), np.uint8)
-        # mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
-        # invert so text becomes black
-        ocr_img = cv2.bitwise_not(roi)
-        imgs.append(ocr_img)
+        config = r'--oem 3 --psm 7 -c tessedit_char_whitelist=C0123456789'
+        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+        gray = cv2.resize(gray, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
+        _, proc = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        
+        # ocr_img = cv2.bitwise_not(roi)
+        imgs.append(proc)
         # cv2.imshow("ROI", roi)
         # cv2.imshow("OCR", ocr_img)
         # cv2.waitKey(0)
-        continue
+        
+        text = pytesseract.image_to_string(proc, config=config).strip()
 
-        text = pytesseract.image_to_string(ocr_img ,
-            config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" )
-        text = text.replace("CO", "C0")  # remove spaces
-        match = re.search(r"C\d{3}", text)
-        if match:
-            camera_id = match.group(0)
-            ocrs.add(camera_id)
+        if text:
+            ocrs.add(text)
         else:
             print(f"Error: Could not extract camera ID from video {video}") 
-            # save the roi next to the video for debugging
-            cv2.imwrite(f"{video}_roi.png", mask)       
 
     else:
         print("Oops, we couldn't process the image!")
