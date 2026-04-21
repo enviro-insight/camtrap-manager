@@ -10,6 +10,7 @@ import numpy as np
 from tkinter import Tk
 from tkinter.filedialog import askdirectory
 from dims import dims
+from collage import make_collage
 
 if not shutil.which("tesseract"):
     print("Tesseract is not installed or not on PATH")
@@ -25,6 +26,8 @@ if not videos:
 
 ocrs = set()
 start_time = time()
+
+imgs = []
 
 for video in videos:
 
@@ -55,6 +58,7 @@ for video in videos:
         # mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
         # invert so text becomes black
         ocr_img = cv2.bitwise_not(roi)
+        imgs.append(ocr_img)
         cv2.imshow("ROI", roi)
         cv2.imshow("OCR", ocr_img)
         cv2.waitKey(0)
@@ -74,6 +78,12 @@ for video in videos:
 
     else:
         print("Oops, we couldn't process the image!")
+
+collage = make_collage(imgs, max_cols=4)
+if collage is not None:
+    cv2.imshow("Collage", collage)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 end_time = time()
 # print pretty time H:M:S
