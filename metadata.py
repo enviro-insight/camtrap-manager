@@ -176,6 +176,7 @@ def main():
 
     # extract metadata for each file and print it
     results = []
+    old_name_new_name_map = {}
     print(f"Extracting metadata from {len(video_files)} files in {directory}...")
     for i, video_file in enumerate(video_files, start=1):
         percent = (i / len(video_files)) * 100
@@ -212,6 +213,9 @@ def main():
                     print(f"Warning: No matching deployment found for video {file_path}. Camera and site will be left blank.")
 
             results.append(metadata)
+            compressed_date = metadata['date'].replace('-', '') if metadata['date'] else 'unknown_date'
+            compressed_time = metadata['time'].replace(':', '') if metadata['time'] else 'unknown_time'
+            old_name_new_name_map[file_path.name] = f"{metadata['camera']}__{compressed_date}_{compressed_time}.mp4"
         except subprocess.CalledProcessError as e:
             print("ExifTool failed.")
             print(e.stderr)
@@ -229,6 +233,7 @@ def main():
     last_date = results[-1]["date"] if results else date.today().isoformat()
     outfile = directory / f"metadata_{camera_id}_{last_date}.csv"
 
+    print(f"Writing metadata to {outfile}...")  
     with open(outfile, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["file_name", "camera", "site", "date", "time", "duration", "latitude", "longitude", "species", "identifiedBy", "identifiedDate", "notes"])
         writer.writeheader()
@@ -236,8 +241,20 @@ def main():
             writer.writerow(row)
     
     print(os.linesep) # print a newline after the progress bar
-    print(f"Metadata extracted for {len(results)} files and written to {outfile}")
-    
 
+    print("Renaming files...")
+    for old_name, new_name in old_name_new_name_map.items():
+        old_path = directory / old_name
+        new_path = directory / new_name
+        if new_path.exists():
+            print(f"Warning: Cannot rename {old_path} to {new_path} because the target file already exists. Skipping.")
+        else:
+            try:
+                old_path.rename(new_path)
+            except Exception as e:
+                print(f"Error renaming {old_path} to {new_path}: {e}")
+                
+    print(f"All done!")
+    
 if __name__ == "__main__":
     main()

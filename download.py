@@ -10,7 +10,7 @@ from googleapiclient.http import MediaIoBaseDownload
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 
-DOWNLOAD_DIR = Path("20260319") # use the download date as these files are updated regularly
+DOWNLOAD_DIR = Path("20260421") # use the download date as these files are updated regularly
 
 # Regex pattern for filenames
 # Example: r"camera.*_"

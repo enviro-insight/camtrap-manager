@@ -5,7 +5,7 @@ suppressPackageStartupMessages({
   library(httr)
 })
 
-DOWNLOAD_DIR <- "20260308"   # use the download date as these files are updated regularly
+DOWNLOAD_DIR <- "20260421"   # use the download date as these files are updated regularly
 NAME_REGEX <- "camera.*_"
 CASE_SENSITIVE <- FALSE
 
