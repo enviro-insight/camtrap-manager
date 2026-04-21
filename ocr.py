@@ -40,7 +40,7 @@ for video in videos:
     roi = frame[int(h*dims["spartan"]["height"]):h, int(w*dims["spartan"]["widthStart"]):int(w*dims["spartan"]["widthEnd"])]
     cv2.imshow("ROI", roi)
     cv2.waitKey(0)
-    continue
+    exit(0)
 
     if ret:
 
