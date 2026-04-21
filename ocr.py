@@ -52,13 +52,13 @@ for video in videos:
         gray = cv2.resize(gray, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
         _, proc = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
         
-        # ocr_img = cv2.bitwise_not(roi)
-        imgs.append(proc)
+        ocr_img = cv2.bitwise_not(proc)
+        imgs.append(ocr_img)
         # cv2.imshow("ROI", roi)
         # cv2.imshow("OCR", ocr_img)
         # cv2.waitKey(0)
         
-        text = pytesseract.image_to_string(proc, config=config).strip()
+        text = pytesseract.image_to_string(ocr_img, config=config).strip()
 
         if text:
             ocrs.add(text)
