@@ -59,9 +59,9 @@ for video in videos:
         # invert so text becomes black
         ocr_img = cv2.bitwise_not(roi)
         imgs.append(ocr_img)
-        cv2.imshow("ROI", roi)
-        cv2.imshow("OCR", ocr_img)
-        cv2.waitKey(0)
+        # cv2.imshow("ROI", roi)
+        # cv2.imshow("OCR", ocr_img)
+        # cv2.waitKey(0)
         continue
 
         text = pytesseract.image_to_string(ocr_img ,
