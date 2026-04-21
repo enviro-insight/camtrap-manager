@@ -197,6 +197,11 @@ def main():
             metadata["latitude"] = None
             metadata["longitude"] = None
 
+            compressed_date = metadata['date'].replace('-', '') if metadata['date'] else 'unknown_date'
+            compressed_time = metadata['time'].replace(':', '') if metadata['time'] else 'unknown_time'
+            new_file_name = f"{metadata['camera']}_{compressed_date}{compressed_time}.mp4"
+            old_name_new_name_map[file_path.name] = new_file_name
+
             # use metadata date and time to find the most recent deployment that occurred before the video was taken
             if (device_deployments):
                 video_datetime = f"{metadata['date']} {metadata['time']}"
@@ -205,17 +210,14 @@ def main():
                     if deployment["activity"] == "Camera retrieval":
                         print(f"Warning: No active deployment for camera {camera_id} at {video_datetime} found (file {file_path}). Last record was a retrieval from site {deployment['locationID']} on {deployment['deploymentDate']} at {deployment['deploymentTime']}. This may indicate that the camera was moved or redeployed without a camera setup record. Location fields will be blank in the dataset.")
                     else:
-                        metadata["camera"] = deployment["deviceID"]
                         metadata["site"] = deployment["locationID"]
                         metadata["latitude"] = deployment["latitude"]
                         metadata["longitude"] = deployment["longitude"]
                 else:
                     print(f"Warning: No matching deployment found for video {file_path}. Camera and site will be left blank.")
 
+            metadata["file_name"] = new_file_name
             results.append(metadata)
-            compressed_date = metadata['date'].replace('-', '') if metadata['date'] else 'unknown_date'
-            compressed_time = metadata['time'].replace(':', '') if metadata['time'] else 'unknown_time'
-            old_name_new_name_map[file_path.name] = f"{metadata['camera']}__{compressed_date}_{compressed_time}.mp4"
         except subprocess.CalledProcessError as e:
             print("ExifTool failed.")
             print(e.stderr)
@@ -253,7 +255,7 @@ def main():
                 old_path.rename(new_path)
             except Exception as e:
                 print(f"Error renaming {old_path} to {new_path}: {e}")
-                
+
     print(f"All done!")
     
 if __name__ == "__main__":
