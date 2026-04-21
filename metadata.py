@@ -170,7 +170,6 @@ def main():
             print(f"Error reading deployments file: {e}")
             sys.exit(1)
         
-
     # get all the video files in the specified directory
     video_files = list(directory.glob("*.mp4", case_sensitive=False))
 

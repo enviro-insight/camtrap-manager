@@ -1,0 +1,6 @@
+dims = {
+    "spartan": {
+        "width": 0.4,
+        "height": 0.9
+    },
+}

@@ -7,13 +7,13 @@ import pytesseract
 from pathlib import Path
 from time import time
 import numpy as np
+from tkinter import Tk
+from tkinter.filedialog import askdirectory
+from dims import dims
 
 if not shutil.which("tesseract"):
     print("Tesseract is not installed or not on PATH")
     exit(1)
-
-from tkinter import Tk
-from tkinter.filedialog import askdirectory
 
 Tk().withdraw()
 
@@ -37,9 +37,10 @@ for video in videos:
     h, w = frame.shape[:2]
 
     # Example: bottom-right corner (tweak these numbers)
-    roi = frame[int(h*0.9):h, int(w*0.4):w]
-    # cv2.imshow("ROI", roi)
-    # cv2.waitKey(0)
+    roi = frame[int(h*dims["spartan"]["height"]):h, int(w*dims["spartan"]["width"]):w]
+    cv2.imshow("ROI", roi)
+    cv2.waitKey(0)
+    continue
 
     if ret:
 
