@@ -44,17 +44,17 @@ for video in videos:
 
     if ret:
 
-        hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+        # hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        # define "white"
-        lower = np.array([0, 0, 200])     # low saturation, high brightness
-        upper = np.array([180, 40, 255])
+        # # define "white"
+        # lower = np.array([0, 0, 200])     # low saturation, high brightness
+        # upper = np.array([180, 40, 255])
 
-        mask = cv2.inRange(hsv, lower, upper)
-        kernel = np.ones((3,3), np.uint8)
-        mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+        # mask = cv2.inRange(hsv, lower, upper)
+        # kernel = np.ones((3,3), np.uint8)
+        # mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
         # invert so text becomes black
-        ocr_img = cv2.bitwise_not(mask)
+        ocr_img = cv2.bitwise_not(roi)
         cv2.imshow("ROI", roi)
         cv2.imshow("OCR", ocr_img)
         cv2.waitKey(0)
