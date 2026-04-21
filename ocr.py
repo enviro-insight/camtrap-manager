@@ -38,9 +38,9 @@ for video in videos:
 
     # Example: bottom-right corner (tweak these numbers)
     roi = frame[int(h*dims["spartan"]["heightStart"]):int(h*dims["spartan"]["heightEnd"]), int(w*dims["spartan"]["widthStart"]):int(w*dims["spartan"]["widthEnd"])]
-    cv2.imshow("ROI", roi)
-    cv2.waitKey(0)
-    exit(0)
+    # cv2.imshow("ROI", roi)
+    # cv2.waitKey(0)
+    # exit(0)
 
     if ret:
 
@@ -53,8 +53,14 @@ for video in videos:
         mask = cv2.inRange(hsv, lower, upper)
         kernel = np.ones((3,3), np.uint8)
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+        # invert so text becomes black
+        ocr_img = cv2.bitwise_not(mask)
+        cv2.imshow("ROI", roi)
+        cv2.imshow("OCR", ocr_img)
+        cv2.waitKey(0)
+        continue
 
-        text = pytesseract.image_to_string(mask ,
+        text = pytesseract.image_to_string(ocr_img ,
             config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" )
         text = text.replace("CO", "C0")  # remove spaces
         match = re.search(r"C\d{3}", text)
