@@ -73,30 +73,46 @@ function gdrive_img_url(string $url): string
 
 <body>
   <h2>Deployments: <?= htmlspecialchars($dir) ?></h2>
-  <table>
-    <tr>
-      <th>dataset</th>
-      <th>locationID</th>
-      <th>deviceID</th>
-      <th>deviceImage</th>
-    </tr>
-    <?php foreach ($rows as $row): ?>
+  <p>
+    <input id="filter" type="text" placeholder="Filter by device ID..." style="padding:4px 8px;font-size:14px;width:220px;">
+  </p>
+  <table id="deployments-table">
+    <thead>
       <tr>
-        <td><?= htmlspecialchars($row[$col['dataset']]) ?></td>
-        <td><?= htmlspecialchars($row[$col['locationID']]) ?></td>
-        <td><?= htmlspecialchars($row[$col['deviceID']]) ?></td>
-        <td style="white-space:nowrap">
-          <img src="<?= htmlspecialchars(gdrive_img_url($row[$col['deviceImage']])) ?>" alt="device image" style="vertical-align:middle">
-          <a href="<?= htmlspecialchars($row[$col['deviceImage']]) ?>" target="_blank" style="margin-left:8px;font-size:12px;vertical-align:middle">full image</a>
-        </td>
+        <th>dataset</th>
+        <th>locationID</th>
+        <th>deviceID</th>
+        <th>deviceImage</th>
       </tr>
-    <?php endforeach; ?>
+    </thead>
+    <tbody>
+      <?php foreach ($rows as $row): ?>
+        <tr>
+          <td><?= htmlspecialchars($row[$col['dataset']]) ?></td>
+          <td><?= htmlspecialchars($row[$col['locationID']]) ?></td>
+          <td><?= htmlspecialchars($row[$col['deviceID']]) ?></td>
+          <td style="white-space:nowrap">
+            <img src="<?= htmlspecialchars(gdrive_img_url($row[$col['deviceImage']])) ?>" alt="device image" style="vertical-align:middle">
+            <a href="<?= htmlspecialchars($row[$col['deviceImage']]) ?>" target="_blank" style="margin-left:8px;font-size:12px;vertical-align:middle">full image</a>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
   </table>
 
   <div id="magnifier"></div>
 
   <script>
-    const mag = document.getElementById('magnifier');
+    // --- filter ---
+    document.getElementById('filter').addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
+      document.querySelectorAll('#deployments-table tbody tr').forEach(tr => {
+        const deviceID = tr.querySelector('td:nth-child(3)').textContent.toLowerCase();
+        tr.style.display = (!q || deviceID.includes(q)) ? '' : 'none';
+      });
+    });
+
+    // --- magnifier ---
     const LENS = 220; // lens square size in px
     const ZOOM = 3; // magnification factor
     const OFFSET = 16;

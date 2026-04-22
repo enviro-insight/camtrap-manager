@@ -21,6 +21,7 @@ def parse_args():
     parser.add_argument(
         "-i",
         "--include-links",
+        action="store_true",
         help="Include links in the output CSV."
     )
 
