@@ -138,6 +138,14 @@ def main():
                 print(f"Error: Deployments file does not exist: {deployments_file}")
                 sys.exit(1)
 
+    # confirm the camera ID on the command line
+    print(f"Please type in the camera ID again to confirm it is correct (entered: {camera_id}): ", end="")
+    confirm_camera_id = input().strip()
+    if confirm_camera_id != camera_id:
+        print("Error: Camera IDs do not match. Please start again...")
+        sys.exit(1)
+
+
     print("Reading metadata from video files in directory:", directory, "for camera ID:", camera_id)
 
     print("Ensuring ExifTool is available...")
