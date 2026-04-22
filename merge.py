@@ -2,11 +2,37 @@
 # also splits Location to lat and long, and formats date and time properly
 # and removes all test data rows
 
+import argparse
 import csv
 import os
 from datetime import datetime
 
-DIR = "20260421"
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Merge and clean deployment data from multiple CSV files into a single output file."
+    )
+
+    parser.add_argument(
+        "-d",
+        "--dir",
+        help="The directory containing the CSV files to merge."
+    )
+
+    parser.add_argument(
+        "-i",
+        "--include-links",
+        help="Include links in the output CSV."
+    )
+
+    return parser.parse_args()
+
+args = parse_args()
+DIR = args.dir if 'dir' in args and args.dir else datetime.now().strftime("%Y%m%d")
+INCLUDE_LINKS = args.include_links if 'include_links' in args and args.include_links else False
+
+if not os.path.isdir(DIR):
+    print(f"Error: Input directory does not exist: {DIR}. Did you run the download script to download the files first?")
+    exit(1)
 
 fields = {
     "dataset": "dataset", # abbreviated form from the original file
@@ -22,6 +48,15 @@ fields = {
     "Longitude":"longitude",
 	"Notes / Comments": "deploymentComments",
 }
+
+additionals = {
+    "Photo of SD card ID.http": "cardIDImage",
+    "Photo of camera or song meter ID.http": "deviceImage",
+    "Photo of camera or song meter set-up.http": "setupImage"
+}
+
+if INCLUDE_LINKS:
+    fields.update(additionals)
 
 # read all the files in DIR
 deployments = []

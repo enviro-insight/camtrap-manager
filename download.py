@@ -1,6 +1,7 @@
 import os
 import re
 from pathlib import Path
+from datetime import datetime
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -10,7 +11,10 @@ from googleapiclient.http import MediaIoBaseDownload
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 
-DOWNLOAD_DIR = Path("20260421") # use the download date as these files are updated regularly
+# short date
+today = datetime.now().strftime("%Y%m%d")
+
+DOWNLOAD_DIR = Path(today) # use the download date as these files are updated regularly
 
 # Regex pattern for filenames
 # Example: r"camera.*_"
