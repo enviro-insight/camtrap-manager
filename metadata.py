@@ -178,8 +178,12 @@ def main():
             print(f"Error reading deployments file: {e}")
             sys.exit(1)
         
-    # get all the video files in the specified directory
-    video_files = list(directory.glob("*.mp4", case_sensitive=False))
+    # get all the video files in the specified directory, mp4 and avi
+    video_files = [
+        f
+        for ext in ("*.mp4", "*.avi")
+        for f in directory.glob(ext, case_sensitive=False)
+    ]
 
     # extract metadata for each file and print it
     results = []
@@ -206,7 +210,9 @@ def main():
 
             compressed_date = metadata['date'].replace('-', '') if metadata['date'] else 'unknown_date'
             compressed_time = metadata['time'].replace(':', '') if metadata['time'] else 'unknown_time'
-            new_file_name = f"{metadata['camera']}_{compressed_date}{compressed_time}.mp4"
+            # file extension
+            ext = file_path.suffix
+            new_file_name = f"{metadata['camera']}_{compressed_date}{compressed_time}{ext}"
             old_name_new_name_map[file_path.name] = new_file_name
 
             # use metadata date and time to find the most recent deployment that occurred before the video was taken
