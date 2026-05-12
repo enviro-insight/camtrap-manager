@@ -59,7 +59,9 @@ def get_file_metadata(file_path: Path) -> dict:
     
     # get the date and duration
     date_time = metadata.get("QuickTime:CreateDate")
-    parts = date_time.split(" ") if date_time else [None, None]
+    if not date_time:
+        raise ValueError(f"CreateDate not found in metadata for file {file_path}")
+    parts = date_time.split(" ")
     date = parts[0].replace(':', '-') if len(parts) > 0 else None
     time = parts[1] if len(parts) > 1 else None
     duration = metadata.get("QuickTime:Duration")
@@ -231,6 +233,8 @@ def main():
 
             metadata["file_name"] = new_file_name
             results.append(metadata)
+        except ValueError as e:
+            print(f"Error processing file {file_path}: {e}")
         except subprocess.CalledProcessError as e:
             print("ExifTool failed.")
             print(e.stderr)
